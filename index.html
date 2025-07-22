@@ -7,43 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
+    <div class="container">
     <div class="card">
         <h2 id="neon-text"></h2>
-        <button class="btn-horario" id="btnHorario">Ver Horario</button>
+     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+    <button class="btn-horario" id="btnHorario">Ver Horario</button>
+    <button class="btn-horario" id="btnVerImagen">Ver Imagen</button>
+</div>
+       <div class="contenedor-arcoiris">
+    <canvas id="arcoiris" class="arcoiris-canvas"></canvas>
+</div>
+<canvas id="circulos" class="arcoiris-canvas circulos-izquierda"></canvas>
+
+
+        <!-- <div class="centro"></div> -->
     </div>
-    <script>
-        const texto = "El Colegio Galileo Galilei invita a la presentación de proyectos de los graduandos del ciclo 2023 - 2025. ¡Evento abierto a todo público! Consulta el horario de asistencia en el botón abajo.";
-        const contenedor = document.getElementById('neon-text');
-        contenedor.innerHTML = texto.split(' ').map(palabra =>
-            `<span class="word">${[...palabra].map(letra => `<span>${letra}</span>`).join('')}</span>&nbsp;`
-        ).join('');
-
-        const spans = contenedor.querySelectorAll('span span');
-
-        function animarLetras() {
-            let index = 0;
-
-            function iluminarSiguiente() {
-                if (index > 0) spans[index - 1].classList.remove('neon');
-                if (index < spans.length) {
-                    spans[index].classList.add('neon');
-                    index++;
-                    setTimeout(iluminarSiguiente, 60);
-                } else {
-                    spans.forEach(span => span.classList.add('neon'));
-                    setTimeout(() => {
-                        spans.forEach(span => span.classList.remove('neon'));
-                        setTimeout(animarLetras, 1000);
-                    }, 600);
-                }
-            }
-            iluminarSiguiente();
-        }
-        animarLetras();
-    </script>
+    </div>
+  
+<div id="modalImagen" style="display:none;">
+    <div class="modal-bg blur-fade" id="modalBgImagen">
+        <div class="modal-card modal-imagen-content">
+            <img src="imagen.jpg" alt="Imagen ampliada" class="imagen-modal-img" />
+            <div class="buttonClose">
+                <button class="close-modal" id="closeImagen">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div id="modalHorario" style="display:none;">
         <div class="modal-bg" id="modalBg">
@@ -76,31 +68,10 @@
             </div>
         </div>
     </div>
+ 
 
-    <script>
-        const btnHorario = document.getElementById('btnHorario');
-        const modalHorario = document.getElementById('modalHorario');
-        const modalBg = document.getElementById('modalBg');
-        const closeModal = document.getElementById('closeModal');
 
-        btnHorario.addEventListener('click', function(e) {
-            modalHorario.style.display = 'block';
-        });
-
-        modalBg.addEventListener('click', function(e) {
-            if (e.target === modalBg) {
-                modalHorario.style.display = 'none';
-            }
-        });
-
-        closeModal.addEventListener('click', function() {
-            modalHorario.style.display = 'none';
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') modalHorario.style.display = 'none';
-        });
-    </script>
+    <script src="script.js"></script>
     </body>
     
 </html>

@@ -1,4 +1,4 @@
-    const texto = "El Colegio Galileo Galilei invita a la presentación de proyectos de los graduandos del ciclo 2023 - 2025. ¡Evento abierto a todo público! Consulta el horario de asistencia en el botón abajo.";
+    const texto = "El Colegio Galileo Galilei invita a la presentación de proyectos de los graduandos del ciclo 2023 - 2025. ¡Evento abierto a todo público! Consulta el horario en el botón de abajo.";
         const contenedor = document.getElementById('neon-text');
         contenedor.innerHTML = texto.split(' ').map(palabra =>
             `<span class="word">${[...palabra].map(letra => `<span>${letra}</span>`).join('')}</span>&nbsp;`

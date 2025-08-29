@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>INVITACIÓN GALILEO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2 id="neon-text">El Colegio Galileo Galilei invita a la presentación de proyectos de los graduandos del ciclo 2023 - 2025. ¡Evento abierto a todo público! Consulta el horario en el botón de abajo.</h2>
+            <div class="buttons-row">
+                <button class="btn-horario" id="btnHorario">Ver Horario</button>
+                <button class="btn-horario" id="btnVerImagen">Ver Imagen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalImagen" style="display:none;">
+        <div class="modal-bg blur-fade" id="modalBgImagen">
+            <div class="modal-card modal-imagen-content">
+                <img src="image.png" alt="Imagen ampliada" class="imagen-modal-img" />
+                <div class="buttonClose">
+                    <button class="close-modal" id="closeImagen">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalHorario" style="display:none;">
+        <div class="modal-bg" id="modalBg">
+            <div class="modal-card">
+                <h3 class="modal-title">Horario de Presentación</h3>
+                <table class="neon-table">
+                    <tr class="group-row"><th colspan="2">Jornada Matutina</th></tr>
+                    <tr><th>Hora</th><th>Grupos</th></tr>
+                    <tr class="time-row">
+                        <td>8:30 – 12:00</td>
+                        <td>Ciclo básico,<br>4to alimentos A, B,<br>4to EDC</td>
+                    </tr>
+                    <tr class="empty-row"><td colspan="2"></td></tr>
+                    <tr class="group-row"><th colspan="2">Jornada Vespertina</th></tr>
+                    <tr><th>Hora</th><th>Grupos</th></tr>
+                    <tr class="time-row">
+                        <td>13:30 – 16:00</td>
+                        <td>4to Mercadotecnia,<br>4to Alimentos C, D, E,<br>4to Dibujo B</td>
+                    </tr>
+                </table>
+                <div class="buttonClose">
+                    <button class="close-modal" id="closeModal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(120deg, #232526 0%, #414345 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.card {
+    background: rgba(20, 20, 30, 0.98);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    padding: 32px 24px 24px 24px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin: auto;
+}
+
+#neon-text {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 22px;
+    background: linear-gradient(270deg, #FFE501, #ffffff, #FFE501, #ffa200, #ffe501);
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s ease-in-out infinite;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+@keyframes gradientMove {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+.buttons-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.btn-horario {
+    font-family: inherit;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ffe501 60%, #fff 100%);
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #ffe50144;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-horario:hover, .close-modal:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px #ffe50166;
+}
+
+.contenedor-arcoiris,
+.arcoiris-canvas {
+    width: 100%;
+    height: 70px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    display: block;
+    max-width: 420px;
+}
+
+.circulos-izquierda {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 430px;
+    top: 20px;
+    opacity: 0.33;
+    pointer-events: none;
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0;left: 0;right: 0;bottom: 0;
+    background: rgba(15,15,30,0.85);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.blur-fade {backdrop-filter: blur(4px);}
+.modal-card {
+    background: #232526;
+    border-radius: 18px;
+    max-width: 95vw;
+    min-width: 260px;
+    width: 90vw;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    z-index: 1000;
+    position: relative;
+}
+.modal-imagen-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-title {
+    color: #ffe501;
+    text-shadow: 0 0 8px #fff;
+    margin-bottom: 18px;
+    font-family: 'Montserrat',Arial,sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.buttonClose {
+    margin-top: 18px;
+    text-align: center;
+}
+.close-modal {
+    background: linear-gradient(90deg,#ffe501 80%,#fff 100%);
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #ffe50144;
+}
+
+.imagen-modal-img {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px #ffe50155;
+}
+
+.neon-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    background: transparent;
+}
+.neon-table th, .neon-table td {
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid #ffe50133;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1em;
+}
+.neon-table tr.group-row th {
+    background: linear-gradient(90deg, #ffe501 60%, #fff 100%);
+    color: #222;
+    font-weight: 700;
+    text-shadow: none;
+    font-size: 1.1em;
+}
+.neon-table tr.time-row td {
+    color: #ffe501;
+    font-weight: 600;
+    background: #232526;
+}
+.neon-table tr.empty-row td {
+    background: none;
+    border: none;
+    color: #bbb;
+    font-size: 0.95em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+@media (max-width: 600px) {
+    .card {
+        padding: 18px 6px 8px 6px;
+        border-radius: 12px;
+        max-width: 98vw;
+    }
+    #neon-text {
+        font-size: 1rem;
+        padding: 0 2px;
+    }
+    .modal-card {
+        padding: 8px;
+        border-radius: 8px;
+    }
+    .arcoiris-canvas {max-width: 95vw;height: 40px;}
+    .circulos-izquierda {width: 50px;height: 50px;left: -12px;top: 30px;}
+    .neon-table th, .neon-table td {font-size: 0.95em;padding: 5px 2px;}
+}
